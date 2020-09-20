@@ -96,7 +96,7 @@ extension BaseViewController {
         let reloadButton = UIButton(type: .custom)
         reloadButton.backgroundColor = UIColor.clear
         reloadButton.addConstraintWidth(24, height: 44)
-        reloadButton.setImage(IconName.iconCallPhone, for: .normal)
+        reloadButton.setImage(IconName.iconReload, for: .normal)
         reloadButton.tintColor = UIColor.white
         reloadButton.addTarget(self, action: #selector(didTapReloadBarItem), for: .touchUpInside)
 
@@ -114,7 +114,7 @@ extension BaseViewController {
         let favoriteButton = UIButton(type: .custom)
         favoriteButton.backgroundColor = UIColor.clear
         favoriteButton.addConstraintWidth(24, height: 44)
-        favoriteButton.setImage(IconName.iconCallPhone, for: .normal)
+        favoriteButton.setImage(IconName.iconHeart, for: .normal)
         favoriteButton.tintColor = UIColor.white
         favoriteButton.addTarget(self, action: #selector(didTapFavoriteBarItem), for: .touchUpInside)
         

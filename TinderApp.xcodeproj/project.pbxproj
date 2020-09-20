@@ -26,6 +26,12 @@
 		7A16178F2517845C002C4BDE /* UIImage_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16178E2517845C002C4BDE /* UIImage_Extension.swift */; };
 		7A1617962517849F002C4BDE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7A1617942517849F002C4BDE /* README.md */; };
 		7A1617972517849F002C4BDE /* UIView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617952517849F002C4BDE /* UIView+Constraint.m */; };
+		7A16179A25178541002C4BDE /* TinderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16179925178541002C4BDE /* TinderListViewController.swift */; };
+		7A16179D25178659002C4BDE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16179C25178659002C4BDE /* CardView.swift */; };
+		7A1617A025178678002C4BDE /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16179F25178678002C4BDE /* CardListView.swift */; };
+		7A1617A32517869C002C4BDE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617A22517869C002C4BDE /* MenuView.swift */; };
+		7A1617A6251786D0002C4BDE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617A5251786D0002C4BDE /* MenuCollectionViewCell.swift */; };
+		7A1617A8251787E5002C4BDE /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617A7251787E5002C4BDE /* UIColor_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,12 @@
 		7A1617932517849F002C4BDE /* UIView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraint.h"; sourceTree = "<group>"; };
 		7A1617942517849F002C4BDE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7A1617952517849F002C4BDE /* UIView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraint.m"; sourceTree = "<group>"; };
+		7A16179925178541002C4BDE /* TinderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderListViewController.swift; sourceTree = "<group>"; };
+		7A16179C25178659002C4BDE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7A16179F25178678002C4BDE /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		7A1617A22517869C002C4BDE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		7A1617A5251786D0002C4BDE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A1617A7251787E5002C4BDE /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +170,7 @@
 		7A16176F251782F8002C4BDE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7A16179825178511002C4BDE /* TinderList */,
 				7A1617702517830D002C4BDE /* Base */,
 			);
 			path = ViewController;
@@ -182,6 +195,7 @@
 		7A16177625178357002C4BDE /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				7A1617A4251786BE002C4BDE /* MenuCollectionViewCell */,
 				7A16177825178371002C4BDE /* Base */,
 			);
 			path = ViewCell;
@@ -190,6 +204,9 @@
 		7A1617772517835E002C4BDE /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				7A1617A12517868F002C4BDE /* MenuView */,
+				7A16179E2517866C002C4BDE /* CardListView */,
+				7A16179B25178645002C4BDE /* CardView */,
 				7A16177925178376002C4BDE /* Base */,
 			);
 			path = CustomView;
@@ -236,6 +253,7 @@
 			children = (
 				7A16178C2517844E002C4BDE /* UIView_Extension.swift */,
 				7A16178E2517845C002C4BDE /* UIImage_Extension.swift */,
+				7A1617A7251787E5002C4BDE /* UIColor_Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -257,6 +275,46 @@
 				7A1617922517849F002C4BDE /* TinderApp-Bridging-Header.h */,
 			);
 			path = "UIView+Constraint";
+			sourceTree = "<group>";
+		};
+		7A16179825178511002C4BDE /* TinderList */ = {
+			isa = PBXGroup;
+			children = (
+				7A16179925178541002C4BDE /* TinderListViewController.swift */,
+			);
+			path = TinderList;
+			sourceTree = "<group>";
+		};
+		7A16179B25178645002C4BDE /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				7A16179C25178659002C4BDE /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		7A16179E2517866C002C4BDE /* CardListView */ = {
+			isa = PBXGroup;
+			children = (
+				7A16179F25178678002C4BDE /* CardListView.swift */,
+			);
+			path = CardListView;
+			sourceTree = "<group>";
+		};
+		7A1617A12517868F002C4BDE /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				7A1617A22517869C002C4BDE /* MenuView.swift */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		7A1617A4251786BE002C4BDE /* MenuCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A1617A5251786D0002C4BDE /* MenuCollectionViewCell.swift */,
+			);
+			path = MenuCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,12 +428,18 @@
 				7A16174F2517810E002C4BDE /* ViewController.swift in Sources */,
 				7A16177525178343002C4BDE /* BaseViewModel.swift in Sources */,
 				7A1617882517841B002C4BDE /* FontName.swift in Sources */,
+				7A1617A6251786D0002C4BDE /* MenuCollectionViewCell.swift in Sources */,
 				7A16178A2517842A002C4BDE /* ScreenSize.swift in Sources */,
 				7A16174B2517810E002C4BDE /* AppDelegate.swift in Sources */,
 				7A16178F2517845C002C4BDE /* UIImage_Extension.swift in Sources */,
+				7A1617A025178678002C4BDE /* CardListView.swift in Sources */,
 				7A1617862517840C002C4BDE /* DefineString.swift in Sources */,
+				7A1617A32517869C002C4BDE /* MenuView.swift in Sources */,
 				7A1617722517831E002C4BDE /* BaseViewController.swift in Sources */,
 				7A16177D251783A5002C4BDE /* BaseCollectionViewCell.swift in Sources */,
+				7A16179D25178659002C4BDE /* CardView.swift in Sources */,
+				7A16179A25178541002C4BDE /* TinderListViewController.swift in Sources */,
+				7A1617A8251787E5002C4BDE /* UIColor_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
