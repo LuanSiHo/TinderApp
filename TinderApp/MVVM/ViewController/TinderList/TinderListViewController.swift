@@ -9,34 +9,33 @@
 import UIKit
 
 class TinderListViewController: BaseViewController {
-    var viewModelData: [CardsDataModel] = [
-        CardsDataModel(bgColor: UIColor(red:0.96, green:0.81, blue:0.46, alpha:1.0), text: "Hamburger", image: "hamburger"),
-                         CardsDataModel(bgColor: UIColor(red:0.29, green:0.64, blue:0.96, alpha:1.0), text: "Puppy", image: "puppy"),
-                         CardsDataModel(bgColor: UIColor(red:0.29, green:0.63, blue:0.49, alpha:1.0), text: "Poop", image: "poop"),
-                         CardsDataModel(bgColor: UIColor(red:0.69, green:0.52, blue:0.38, alpha:1.0), text: "Panda", image: "panda"),
-                         CardsDataModel(bgColor: UIColor(red:0.90, green:0.99, blue:0.97, alpha:1.0), text: "Subway", image: "subway"),
-                         CardsDataModel(bgColor: UIColor(red:0.83, green:0.82, blue:0.69, alpha:1.0), text: "Robot", image: "robot"),
-    ]
-    
     private lazy var cardListView: CardListView = {
         let cardListView = CardListView()
         cardListView.translatesAutoresizingMaskIntoConstraints = false
         return cardListView
     }()
     
-    private func setupCardListView() {
-        cardListView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        cardListView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
-        cardListView.heightAnchor.constraint(equalToConstant: ScreenSize.height * 0.6).isActive = true
-        cardListView.addConstraint(fromLeft: 20, toRight: 20)
-        cardListView.dataSource = self
-    }
+    private lazy var viewModel: TinderListViewModel = {
+        return TinderListViewModel.init(delegate: self)
+    }()
+    
+    private lazy var noDataLabel: UILabel = {
+        let noDataLabel = UILabel()
+        noDataLabel.text = DefineString.noPeopleAroundMessage
+        noDataLabel.textColor = ColorName.grayColor
+        noDataLabel.textAlignment = .center
+        noDataLabel.font = FontName.systemFont(ofSize: 14)
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        return noDataLabel
+    }()
 }
 
 // MARK: - Life cycle
 extension TinderListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserList()
+        setupNoDataLabel()
     }
 }
 
@@ -45,7 +44,6 @@ extension TinderListViewController {
     override func setupView() {
         super.setupView()
         view.backgroundColor = ColorName.whiteColor
-        view.addSubview(cardListView)
         setupCardListView()
     }
     
@@ -55,36 +53,69 @@ extension TinderListViewController {
     }
     
     override func didTapReloadBarItem() {
-        cardListView.reloadData()
+        hideNoDataView()
+        viewModel.loadUserList()
+    }
+    
+    private func setupCardListView() {
+        view.addSubview(cardListView)
+        cardListView.addConstraintCenteringX()
+        cardListView.addConstraintCenteringY(withOffset: -20)
+        cardListView.addConstraintHeight(ScreenSize.height * 0.6)
+        cardListView.addConstraint(fromLeft: 20, toRight: 20)
+        cardListView.dataSource = self
+    }
+    
+    private func setupNoDataLabel() {
+        view.addSubview(noDataLabel)
+        noDataLabel.addConstraintCenteringXY()
+        noDataLabel.isHidden = true
     }
 }
 
+extension TinderListViewController {
+    private func getUserList() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.viewModel.loadUserList()
+        }
+    }
+}
+
+// MARK: - CardListDataSource
 extension TinderListViewController: CardListDataSource {
+    
     func numberOfCards() -> Int {
-        return viewModelData.count
+        return viewModel.userList.count
     }
     
     func card(at index: Int) -> CardView {
         let card = CardView()
-        card.dataSource = viewModelData[index]
+        card.userInfo = viewModel.userList[index]
         return card
     }
     
-    func emptyView() -> UIView? {
-        return nil
+    func showOutOfCardView() {
+        showNoDataView()
     }
 }
 
-struct CardsDataModel {
+// MARK: - TinderListViewModelDelegate
+extension TinderListViewController: TinderListViewModelDelegate {
+    func showNoDataView() {
+        DispatchQueue.main.async {
+            self.noDataLabel.isHidden = false
+        }
+    }
     
-    var bgColor: UIColor
-    var text : String
-    var image : String
-      
-    init(bgColor: UIColor, text: String, image: String) {
-        self.bgColor = bgColor
-        self.text = text
-        self.image = image
+    func hideNoDataView() {
+        DispatchQueue.main.async {
+            self.noDataLabel.isHidden = true
+        }
+    }
     
+    override func reloadData() {
+        DispatchQueue.main.async {
+            self.cardListView.reloadData()
+        }
     }
 }

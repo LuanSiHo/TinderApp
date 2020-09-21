@@ -36,11 +36,6 @@ extension BaseViewController {
     }
 }
 
-// MARK: - BaseViewModelDelegate
-extension BaseViewController: BaseViewModelDelegate {
-    
-}
-
 // MARK: - Navigation
 extension BaseViewController {
     func setupNavigationTinderList() {
@@ -74,6 +69,7 @@ extension BaseViewController {
 
 // MARK: - UIBarButtonItem
 extension BaseViewController {
+    // left bar back
     func addBackLeftBarItem() {
         let backButton = UIButton(type: .custom)
         backButton.backgroundColor = UIColor.clear
@@ -92,6 +88,7 @@ extension BaseViewController {
         navigationItem.leftBarButtonItem = backItem
     }
     
+    // left bar reload
     func addReloadLeftBarItem() {
         let reloadButton = UIButton(type: .custom)
         reloadButton.backgroundColor = UIColor.clear
@@ -110,6 +107,7 @@ extension BaseViewController {
         navigationItem.leftBarButtonItem = reloadBarItem
     }
     
+    // right bar favorite
     func addFavoriteRightBarItem() {
         let favoriteButton = UIButton(type: .custom)
         favoriteButton.backgroundColor = UIColor.clear
@@ -144,5 +142,30 @@ extension BaseViewController {
 extension BaseViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+}
+
+// MARK: - BaseViewModelDelegate
+extension BaseViewController: BaseViewModelDelegate {
+    @objc func reloadData() {
+        
+    }
+    
+    func showErrorView(error: ErrorType) {
+        DispatchQueue.main.async {
+            ErrorView.shared.showError(type: error)
+        }
+    }
+    
+    func showLoadingView() {
+        DispatchQueue.main.async {
+            self.view.showLoadingView()
+        }
+    }
+    
+    func hideLoadingView() {
+        DispatchQueue.main.async {
+            self.view.hideLoadingView()
+        }
     }
 }

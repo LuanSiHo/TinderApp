@@ -11,7 +11,7 @@ import UIKit
 protocol CardListDataSource {
     func numberOfCards() -> Int
     func card(at index: Int) -> CardView
-    func emptyView() -> UIView?
+    func showOutOfCardView()
 }
 
 class CardListView: BaseUIView {
@@ -102,7 +102,7 @@ extension CardListView: CardViewDelegate {
     private func didEndSwipe(on card: CardView) {
         guard let datasource = dataSource else { return }
         card.removeFromSuperview()
-        
+
         if numberOfInvisibleCards > 0 {
             // there are still cards that is not showing
             // get top invisible card index
@@ -110,7 +110,12 @@ extension CardListView: CardViewDelegate {
             // add to last position of visible list
             add(card: datasource.card(at: index), at: numberOfVisibleCards - 1)
         }
-        updateVisibleCardListUI()
+        
+        if visibleCardViewList.isEmpty {
+            dataSource?.showOutOfCardView()
+        } else {
+            updateVisibleCardListUI()
+        }
     }
     
     private func updateVisibleCardListUI() {

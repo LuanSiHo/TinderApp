@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol CardViewDelegate: class {
     func didSwipeLeft(on view: CardView)
@@ -36,11 +37,10 @@ class CardView: BaseUIView {
 
     private lazy var avatarImageView: UIImageView = {
         let avatarImageView = UIImageView()
+        avatarImageView.backgroundColor = ColorName.grayColor
         avatarImageView.contentMode = .scaleAspectFit
         avatarImageView.layer.cornerRadius = 75
         avatarImageView.layer.masksToBounds = true
-        avatarImageView.layer.borderColor = ColorName.redColor.cgColor
-        avatarImageView.layer.borderWidth = 2
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         return avatarImageView
     }()
@@ -60,7 +60,7 @@ class CardView: BaseUIView {
         userInfoDetailLabel.textAlignment = .center
         userInfoDetailLabel.font = FontName.boldSystemFont(ofSize: 18)
         userInfoDetailLabel.translatesAutoresizingMaskIntoConstraints = false
-        userInfoDetailLabel.text = "Hello World"
+        userInfoDetailLabel.numberOfLines = 2
         return userInfoDetailLabel
     }()
     
@@ -71,15 +71,16 @@ class CardView: BaseUIView {
         return bottomMenuView
     }()
     
-    var dataSource: CardsDataModel? {
+    var userInfo: UserModel? {
         didSet {
-            userInfoTitleLabel.text = dataSource?.text
-            guard let image = dataSource?.image else { return }
-            avatarImageView.image = UIImage(named: image)
+            guard let userModel = userInfo else {return }
+            updateUI(with: userModel, and: currentInfoType)
         }
     }
+    
+    private var currentInfoType: MenubarItemType = .name
 
-    weak var delegate : CardViewDelegate?
+    weak var delegate: CardViewDelegate?
     
     // MARK: Override function
     override func initComponents() {
@@ -122,6 +123,7 @@ extension CardView {
     private func setupDetailLabel() {
         containerView.addSubview(userInfoDetailLabel)
         userInfoDetailLabel.addConstraintCenteringX()
+        userInfoDetailLabel.addConstraint(fromLeft: 4, toRight: 4)
         userInfoDetailLabel.addConstraint(fromViewBottom: userInfoTitleLabel, distance: 8)
     }
     
@@ -189,6 +191,32 @@ extension CardView {
 // MARK: - MenuViewDelegate
 extension CardView: MenuViewDelegate {
     func didSelectItem(at indexPath: IndexPath) {
-        // todo:
+        guard let userModel = userInfo else { return }
+        currentInfoType = MenubarItemType(rawValue: indexPath.item) ?? .name
+        updateUI(with: userModel, and: currentInfoType)
+    }
+    
+    private func updateUI(with userModel: UserModel, and type: MenubarItemType) {
+        switch type {
+        case .name:
+            userInfoTitleLabel.text = DefineString.usernameMessage
+            userInfoDetailLabel.text = userModel.name?.fullName
+            break
+        case .birthday:
+            userInfoTitleLabel.text = DefineString.birthdayMessage
+            userInfoDetailLabel.text = userModel.birthday?.date
+            break
+        case .address:
+            userInfoTitleLabel.text = DefineString.addressMessage
+            userInfoDetailLabel.text = userModel.location?.detailAddress
+            break
+        case .phone:
+            userInfoTitleLabel.text = DefineString.phoneNumberMessage
+            userInfoDetailLabel.text = userModel.phoneNumber
+            break
+        }
+        
+        let imageUrl = userModel.avatarImage?.largeImage ?? ""
+        avatarImageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
     }
 }

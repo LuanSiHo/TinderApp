@@ -20,7 +20,5 @@ class BaseCollectionViewCell: UICollectionViewCell {
         setupSubviews()
     }
     
-    func setupSubviews() {
-        print("overriden method")
-    }
+    func setupSubviews() {}
 }

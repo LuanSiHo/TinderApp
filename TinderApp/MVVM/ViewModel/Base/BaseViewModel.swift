@@ -8,7 +8,12 @@
 
 import Foundation
 
-protocol BaseViewModelDelegate: class {}
+protocol BaseViewModelDelegate: class {
+    func showErrorView(error: ErrorType)
+    func showLoadingView()
+    func hideLoadingView()
+    func reloadData()
+}
 
 class BaseViewModel {
     private weak var delegate: BaseViewModelDelegate?
@@ -16,4 +21,10 @@ class BaseViewModel {
     init(delegate: BaseViewModelDelegate) {
         self.delegate = delegate
     }
+}
+
+extension BaseViewModel: BaseProtocol {
+    func showErrorView(error: ErrorType) {}
+    func showLoadingView() {}
+    func hideLoadingView() {}
 }
