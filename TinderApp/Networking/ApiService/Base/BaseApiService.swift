@@ -8,12 +8,6 @@
 
 import Foundation
 
-protocol BaseProtocol: class {
-    func showErrorView(error: ErrorType)
-    func showLoadingView()
-    func hideLoadingView()
-}
-
 class BaseApiService<Delegate> where Delegate: BaseProtocol {
     
     let alamofireManager: AlamofireManager = AlamofireManager()

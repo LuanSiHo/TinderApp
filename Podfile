@@ -9,6 +9,7 @@ target 'TinderApp' do
   pod 'Alamofire', '4.9.0'
   pod 'AlamofireObjectMapper', '5.2.1'
   pod 'SDWebImage', '5.7.0'
+  pod 'RealmSwift', '3.17.3'
   
   target 'TinderAppTests' do
     inherit! :search_paths

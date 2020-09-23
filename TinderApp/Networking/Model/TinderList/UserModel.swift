@@ -10,11 +10,11 @@ import Foundation
 import ObjectMapper
 
 class UserModel: BaseModel {
-    var name: NameModel?
-    var birthday: BirthdayModel?
-    var location: LocationModel?
-    var phoneNumber: String = ""
-    var avatarImage: AvatarImageModel?
+    @objc dynamic var name: NameModel?
+    @objc dynamic var birthday: BirthdayModel?
+    @objc dynamic var location: LocationModel?
+    @objc dynamic var phoneNumber: String = ""
+    @objc dynamic var avatarImage: AvatarImageModel?
 
     override func mapping(map: Map) {
         name        <- map["name"]
@@ -22,5 +22,9 @@ class UserModel: BaseModel {
         location    <- map["location"]
         phoneNumber <- map["phone"]
         avatarImage <- map["picture"]
+    }
+    
+    override class func primaryKey() -> String? {
+        return "phoneNumber"
     }
 }

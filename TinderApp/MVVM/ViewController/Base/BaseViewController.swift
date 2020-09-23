@@ -44,18 +44,28 @@ extension BaseViewController {
         addFavoriteRightBarItem()
         setNavigationTitle(DefineString.tinderListTitle)
     }
+    
+    func setupNavigationFavoriteList() {
+        customNavigationFavoriteList()
+        addBackLeftBarItem()
+        setNavigationTitle(DefineString.favoriteListTitle)
+    }
 }
 
 // MARK: - Custom Navigation
 extension BaseViewController {
     func customNavigationTinderList() {
-        let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
+        customDefaultNavigation()
+    }
+    
+    func customNavigationFavoriteList() {
+       customDefaultNavigation()
+    }
+    
+    func customDefaultNavigation() {
+        let textAttribute = [NSAttributedString.Key.foregroundColor: ColorName.blackColor]
         navigationController?.navigationBar.titleTextAttributes = textAttribute
-        navigationController?.navigationBar.barTintColor = ColorName.whiteColor
-
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.backgroundColor = ColorName.whiteColor
     }
 
     func setNavigationTitle(_ title: String) {
@@ -74,7 +84,7 @@ extension BaseViewController {
         let backButton = UIButton(type: .custom)
         backButton.backgroundColor = UIColor.clear
         backButton.addConstraintWidth(24, height: 44)
-        backButton.setImage(IconName.iconCallPhone, for: .normal)
+        backButton.setImage(IconName.iconBack, for: .normal)
         backButton.tintColor = UIColor.white
         backButton.addTarget(self, action: #selector(didTapBackLeftBarItem), for: .touchUpInside)
 
@@ -135,7 +145,8 @@ extension BaseViewController {
     
     @objc func didTapReloadBarItem() {}
     
-    @objc func didTapFavoriteBarItem() {}
+    @objc func didTapFavoriteBarItem() {
+    }
 }
 
 // MARK: - UIGestureRecognizerDelegate
@@ -147,9 +158,11 @@ extension BaseViewController: UIGestureRecognizerDelegate {
 
 // MARK: - BaseViewModelDelegate
 extension BaseViewController: BaseViewModelDelegate {
-    @objc func reloadData() {
-        
-    }
+    @objc func showNoDataView() {}
+    
+    @objc func hideNoDataView() {}
+    
+    @objc func reloadData() {}
     
     func showErrorView(error: ErrorType) {
         DispatchQueue.main.async {

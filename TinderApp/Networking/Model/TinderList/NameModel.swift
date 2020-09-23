@@ -10,9 +10,9 @@ import Foundation
 import ObjectMapper
 
 class NameModel: BaseModel {
-    var title: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var firstName: String = ""
+    @objc dynamic var lastName: String = ""
     
     lazy var fullName: String = {
         return self.firstName + " " + self.lastName
@@ -22,5 +22,9 @@ class NameModel: BaseModel {
         title       <- map["title"]
         firstName   <- map["first"]
         lastName    <- map["last"]
+    }
+    
+    override class func ignoredProperties() -> [String] {
+        return ["fullName"]
     }
 }

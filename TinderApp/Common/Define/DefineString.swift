@@ -9,7 +9,8 @@
 import Foundation
 
 struct DefineString {
-    static let tinderListTitle = "Home"
+    static let tinderListTitle = "Tinder List"
+    static let favoriteListTitle = "Favorite List"
     
     // Error Message
     static let noInternetErrorMessage = "No Internet connection. Please check your network."

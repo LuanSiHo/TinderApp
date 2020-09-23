@@ -10,8 +10,8 @@ import UIKit
 import SDWebImage
 
 protocol CardViewDelegate: class {
-    func didSwipeLeft(on view: CardView)
-    func didSwipeRight(on view: CardView)
+    func didSwipeLeft(on view: CardView, at index: Int)
+    func didSwipeRight(on view: CardView, at index: Int)
 }
 
 class CardView: BaseUIView {
@@ -77,6 +77,8 @@ class CardView: BaseUIView {
             updateUI(with: userModel, and: currentInfoType)
         }
     }
+    
+    var cardIndex: Int = 0
     
     private var currentInfoType: MenubarItemType = .name
 
@@ -150,9 +152,9 @@ extension CardView {
         
         switch sender.state {
         case .ended:
-            if (card.center.x) > 400 {
+            if (card.center.x) > 300 {
                 // swipe right
-                delegate?.didSwipeRight(on: card)
+                delegate?.didSwipeRight(on: card, at: cardIndex)
                 // perform animation and move card to the right of the screen
                 UIView.animate(withDuration: 0.2) {
                     card.center = CGPoint(x: centerPointOfSuperView.x + selectedPoint.x + 200, y: centerPointOfSuperView.y + selectedPoint.y + 75)
@@ -160,9 +162,9 @@ extension CardView {
                     self.layoutIfNeeded()
                 }
                 return
-            }else if card.center.x < -40 {
+            }else if card.center.x < -10 {
                 // swipe left
-                delegate?.didSwipeLeft(on: card)
+                delegate?.didSwipeLeft(on: card, at: cardIndex)
                 // perform animation and move card to the left of the screen
                 UIView.animate(withDuration: 0.2) {
                     card.center = CGPoint(x: centerPointOfSuperView.x + selectedPoint.x - 200, y: centerPointOfSuperView.y + selectedPoint.y + 75)

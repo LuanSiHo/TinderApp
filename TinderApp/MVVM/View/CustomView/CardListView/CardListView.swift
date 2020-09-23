@@ -12,6 +12,8 @@ protocol CardListDataSource {
     func numberOfCards() -> Int
     func card(at index: Int) -> CardView
     func showOutOfCardView()
+    func didSwipeLeft(at index: Int)
+    func didSwipeRight(at index: Int)
 }
 
 class CardListView: BaseUIView {
@@ -91,11 +93,13 @@ extension CardListView {
 
 // MARK: - CardViewDelegate, Swipe Card Handler
 extension CardListView: CardViewDelegate {
-    func didSwipeLeft(on view: CardView) {
+    func didSwipeLeft(on view: CardView, at index: Int) {
+        dataSource?.didSwipeLeft(at: index)
         didEndSwipe(on: view)
     }
     
-    func didSwipeRight(on view: CardView) {
+    func didSwipeRight(on view: CardView, at index: Int) {
+        dataSource?.didSwipeRight(at: index)
         didEndSwipe(on: view)
     }
     
@@ -110,7 +114,7 @@ extension CardListView: CardViewDelegate {
             // add to last position of visible list
             add(card: datasource.card(at: index), at: numberOfVisibleCards - 1)
         }
-        
+                
         if visibleCardViewList.isEmpty {
             dataSource?.showOutOfCardView()
         } else {

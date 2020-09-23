@@ -13,5 +13,6 @@ struct ColorName {
     static let whiteColor = UIColor.white
     static let blackColor = UIColor.black
     static let grayColor = UIColor.gray
+    static let clearColor = UIColor.clear
     static let darkGreenColor = UIColor(hex: "298056")
 }

@@ -8,10 +8,13 @@
 
 import UIKit
 import ObjectMapper
+import RealmSwift
 
-class BaseModel: NSObject, Mappable {
-    required init?(map: Map) {}
-    override init() {}
-    
-    func mapping(map: Map) {}
+class BaseModel: Object, Mappable {
+    required convenience init?(map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+    }
 }

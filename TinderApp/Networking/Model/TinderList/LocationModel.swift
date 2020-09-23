@@ -10,10 +10,10 @@ import Foundation
 import ObjectMapper
 
 class LocationModel: BaseModel {
-    var street: StreetModel?
-    var city: String = ""
-    var state: String = ""
-    var country: String = ""
+    @objc dynamic var street: StreetModel?
+    @objc dynamic var city: String = ""
+    @objc dynamic var state: String = ""
+    @objc dynamic var country: String = ""
     
     lazy var detailAddress: String = {
         var detailAddress: String = ""
@@ -28,6 +28,10 @@ class LocationModel: BaseModel {
         detailAddress.append(", \(country)")
         return detailAddress
     }()
+    
+    override static func ignoredProperties() -> [String] {
+        return ["detailAddress"]
+    }
     
     override func mapping(map: Map) {
         street          <- map["street"]

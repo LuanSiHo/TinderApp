@@ -17,4 +17,6 @@ struct IconName {
     static let iconCalendar = UIImage.bundleImage(named: "iconCalendar")
     static let iconAddress = UIImage.bundleImage(named: "iconAddress")
     static let iconPhone = UIImage.bundleImage(named: "iconPhone")
+    
+    static let iconBack = UIImage.bundleImage(named: "iconBack")
 }

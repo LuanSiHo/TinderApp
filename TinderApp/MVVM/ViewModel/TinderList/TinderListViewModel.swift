@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol TinderListViewModelDelegate: BaseViewModelDelegate {
-    func showNoDataView()
-    func hideNoDataView()
-}
+protocol TinderListViewModelDelegate: BaseViewModelDelegate {}
 
 class TinderListViewModel: BaseViewModel {
     private weak var delegate: TinderListViewModelDelegate?
@@ -31,13 +28,12 @@ class TinderListViewModel: BaseViewModel {
 extension TinderListViewModel {
     func loadUserList() {
         // check network
-        if !AlamofireManager.isNetworkAvailable {
+        if !AlamofireManager.checkNetworkAvailable() {
             delegate?.showErrorView(error: .noInternetError)
             return
         }
         
         delegate?.showLoadingView()
-        
         let userListParam = UserListParam()
         userListParam.numberOfResult = 50
         
@@ -64,6 +60,14 @@ extension TinderListViewModel {
                 strongSelf.delegate?.showNoDataView()
                 break
             }
+        }
+    }
+    
+    func addUserToFavoriteList(index: Int) {
+        do {
+            try LocalFavoriteListManager.shared.add(user: userList[index])
+        } catch {
+            delegate?.showErrorView(error: .defaultError)
         }
     }
 }

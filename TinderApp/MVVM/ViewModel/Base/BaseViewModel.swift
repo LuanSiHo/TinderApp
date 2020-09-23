@@ -8,23 +8,27 @@
 
 import Foundation
 
-protocol BaseViewModelDelegate: class {
-    func showErrorView(error: ErrorType)
-    func showLoadingView()
-    func hideLoadingView()
-    func reloadData()
+protocol BaseProtocol: class {}
+
+protocol NoDataProtocol: class {
+    func showNoDataView()
+    func hideNoDataView()
 }
 
-class BaseViewModel {
+protocol LoadingProtocol: class  {
+    func showLoadingView()
+    func hideLoadingView()
+}
+
+protocol BaseViewModelDelegate: LoadingProtocol, NoDataProtocol {
+    func reloadData()
+    func showErrorView(error: ErrorType)
+}
+
+class BaseViewModel: BaseProtocol {
     private weak var delegate: BaseViewModelDelegate?
 
     init(delegate: BaseViewModelDelegate) {
         self.delegate = delegate
     }
-}
-
-extension BaseViewModel: BaseProtocol {
-    func showErrorView(error: ErrorType) {}
-    func showLoadingView() {}
-    func hideLoadingView() {}
 }

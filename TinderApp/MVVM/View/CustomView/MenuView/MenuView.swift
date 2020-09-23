@@ -25,6 +25,7 @@ class MenuView: BaseUIView {
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         return collectionView
     }()
     

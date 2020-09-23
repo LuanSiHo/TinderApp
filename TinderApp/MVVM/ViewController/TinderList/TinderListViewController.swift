@@ -52,11 +52,6 @@ extension TinderListViewController {
         setupNavigationTinderList()
     }
     
-    override func didTapReloadBarItem() {
-        hideNoDataView()
-        viewModel.loadUserList()
-    }
-    
     private func setupCardListView() {
         view.addSubview(cardListView)
         cardListView.addConstraintCenteringX()
@@ -73,6 +68,19 @@ extension TinderListViewController {
     }
 }
 
+// MARK: - Handle Action
+extension TinderListViewController {
+    override func didTapReloadBarItem() {
+        hideNoDataView()
+        viewModel.loadUserList()
+    }
+    
+    override func didTapFavoriteBarItem() {
+        AppRouter.shared.gotoFavoriteList()
+    }
+}
+
+// MARK: - API service
 extension TinderListViewController {
     private func getUserList() {
         DispatchQueue.global(qos: .userInitiated).async {
@@ -83,6 +91,11 @@ extension TinderListViewController {
 
 // MARK: - CardListDataSource
 extension TinderListViewController: CardListDataSource {
+    func didSwipeLeft(at index: Int) {}
+    
+    func didSwipeRight(at index: Int) {
+        viewModel.addUserToFavoriteList(index: index)
+    }
     
     func numberOfCards() -> Int {
         return viewModel.userList.count
@@ -91,6 +104,7 @@ extension TinderListViewController: CardListDataSource {
     func card(at index: Int) -> CardView {
         let card = CardView()
         card.userInfo = viewModel.userList[index]
+        card.cardIndex = index
         return card
     }
     
@@ -101,13 +115,13 @@ extension TinderListViewController: CardListDataSource {
 
 // MARK: - TinderListViewModelDelegate
 extension TinderListViewController: TinderListViewModelDelegate {
-    func showNoDataView() {
+    override func showNoDataView() {
         DispatchQueue.main.async {
             self.noDataLabel.isHidden = false
         }
     }
     
-    func hideNoDataView() {
+    override func hideNoDataView() {
         DispatchQueue.main.async {
             self.noDataLabel.isHidden = true
         }

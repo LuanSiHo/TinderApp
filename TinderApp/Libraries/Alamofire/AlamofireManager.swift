@@ -26,9 +26,9 @@ public class AlamofireManager: NSObject {
         return defaultHeaders
     }
     
-    public static var isNetworkAvailable: Bool = {
+    public static func checkNetworkAvailable() -> Bool {
         return NetworkReachabilityManager()!.isReachable
-    }()
+    }
     
     public func request(networkRequest: NetworkRequest) {
         // update time out

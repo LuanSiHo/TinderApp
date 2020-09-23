@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class StreetModel: BaseModel {
-    var addressNumber: Int = 0
-    var streetName: String = ""
+    @objc dynamic var addressNumber: Int = 0
+    @objc dynamic var streetName: String = ""
     
     override func mapping(map: Map) {
         addressNumber       <- map["number"]

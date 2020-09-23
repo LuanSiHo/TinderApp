@@ -10,9 +10,9 @@ import Foundation
 import ObjectMapper
 
 class AvatarImageModel: BaseModel {
-    var largeImage: String = ""
-    var mediumImage: String = ""
-    var thumbnailImage: String = ""
+    @objc dynamic var largeImage: String = ""
+    @objc dynamic var mediumImage: String = ""
+    @objc dynamic var thumbnailImage: String = ""
     
     override func mapping(map: Map) {
         largeImage      <- map["large"]

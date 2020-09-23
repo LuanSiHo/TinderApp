@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class BirthdayModel: BaseModel {
-    var date: String = ""
-    var age: Int = 0
+    @objc dynamic var date: String = ""
+    @objc dynamic var age: Int = 0
     
     override func mapping(map: Map) {
         date        <- (map["date"], BirthdayTransform())

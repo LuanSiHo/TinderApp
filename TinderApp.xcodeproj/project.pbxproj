@@ -30,7 +30,6 @@
 		7A16179D25178659002C4BDE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16179C25178659002C4BDE /* CardView.swift */; };
 		7A1617A025178678002C4BDE /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16179F25178678002C4BDE /* CardListView.swift */; };
 		7A1617A32517869C002C4BDE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617A22517869C002C4BDE /* MenuView.swift */; };
-		7A1617A6251786D0002C4BDE /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617A5251786D0002C4BDE /* MenuCollectionViewCell.swift */; };
 		7A1617A8251787E5002C4BDE /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617A7251787E5002C4BDE /* UIColor_Extension.swift */; };
 		7A1617AD25179BED002C4BDE /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617AC25179BED002C4BDE /* BaseModel.swift */; };
 		7A1617B225179FC6002C4BDE /* BaseApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617B125179FC6002C4BDE /* BaseApiService.swift */; };
@@ -55,9 +54,19 @@
 		7A1617E22518E0E3002C4BDE /* StreetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617E12518E0E3002C4BDE /* StreetModel.swift */; };
 		7A1617E42518E0FB002C4BDE /* AvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617E32518E0FB002C4BDE /* AvatarModel.swift */; };
 		7A1617E72518E6F5002C4BDE /* BirthdayTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1617E62518E6F5002C4BDE /* BirthdayTransform.swift */; };
+		7A52DB0825190C6300D45169 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB0725190C6300D45169 /* AppRouter.swift */; };
+		7A52DB0A25190E5C00D45169 /* UIApplication_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB0925190E5C00D45169 /* UIApplication_Extension.swift */; };
+		7A52DB0D251A4CC600D45169 /* LocalFavoriteListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB0C251A4CC600D45169 /* LocalFavoriteListManager.swift */; };
+		7A52DB0F251BAA7400D45169 /* Realm_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB0E251BAA7400D45169 /* Realm_Extension.swift */; };
+		7A52DB11251BAC6300D45169 /* LoadingDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB10251BAC6300D45169 /* LoadingDataType.swift */; };
 		7AD274AA2518EE7D00AC8224 /* Date_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274A92518EE7D00AC8224 /* Date_Extension.swift */; };
 		7AD274AC2518EEEB00AC8224 /* DefineName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274AB2518EEEB00AC8224 /* DefineName.swift */; };
 		7AD274AE2518F31400AC8224 /* MenuBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274AD2518F31400AC8224 /* MenuBarItemType.swift */; };
+		7AD274B12519043000AC8224 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274B02519043000AC8224 /* FavoriteListViewController.swift */; };
+		7AD274B42519047300AC8224 /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274B32519047300AC8224 /* FavoriteListViewModel.swift */; };
+		7AD274B62519058E00AC8224 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274B52519058E00AC8224 /* BaseTableViewCell.swift */; };
+		7AD274BA251906DA00AC8224 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274B9251906DA00AC8224 /* MenuCollectionViewCell.swift */; };
+		7AD274BC2519071C00AC8224 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD274BB2519071C00AC8224 /* UserInfoTableViewCell.swift */; };
 		B50DA07A19A78D13828FD502 /* Pods_TinderAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6FCA0B5CD1100DD9959D8 /* Pods_TinderAppTests.framework */; };
 		B984A7466E487D201CE147B5 /* Pods_TinderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C17E887E0C8681364600037 /* Pods_TinderApp.framework */; };
 /* End PBXBuildFile section */
@@ -105,7 +114,6 @@
 		7A16179C25178659002C4BDE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7A16179F25178678002C4BDE /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		7A1617A22517869C002C4BDE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		7A1617A5251786D0002C4BDE /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A1617A7251787E5002C4BDE /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		7A1617AC25179BED002C4BDE /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		7A1617B125179FC6002C4BDE /* BaseApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiService.swift; sourceTree = "<group>"; };
@@ -130,9 +138,19 @@
 		7A1617E12518E0E3002C4BDE /* StreetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetModel.swift; sourceTree = "<group>"; };
 		7A1617E32518E0FB002C4BDE /* AvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarModel.swift; sourceTree = "<group>"; };
 		7A1617E62518E6F5002C4BDE /* BirthdayTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTransform.swift; sourceTree = "<group>"; };
+		7A52DB0725190C6300D45169 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		7A52DB0925190E5C00D45169 /* UIApplication_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication_Extension.swift; sourceTree = "<group>"; };
+		7A52DB0C251A4CC600D45169 /* LocalFavoriteListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFavoriteListManager.swift; sourceTree = "<group>"; };
+		7A52DB0E251BAA7400D45169 /* Realm_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_Extension.swift; sourceTree = "<group>"; };
+		7A52DB10251BAC6300D45169 /* LoadingDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataType.swift; sourceTree = "<group>"; };
 		7AD274A92518EE7D00AC8224 /* Date_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Extension.swift; sourceTree = "<group>"; };
 		7AD274AB2518EEEB00AC8224 /* DefineName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineName.swift; sourceTree = "<group>"; };
 		7AD274AD2518F31400AC8224 /* MenuBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarItemType.swift; sourceTree = "<group>"; };
+		7AD274B02519043000AC8224 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		7AD274B32519047300AC8224 /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
+		7AD274B52519058E00AC8224 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		7AD274B9251906DA00AC8224 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AD274BB2519071C00AC8224 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7D8F56152AD7B9347141043D /* Pods-TinderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderApp.release.xcconfig"; path = "Target Support Files/Pods-TinderApp/Pods-TinderApp.release.xcconfig"; sourceTree = "<group>"; };
 		7FB6FCA0B5CD1100DD9959D8 /* Pods_TinderAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6842CABE413D4BB92599889 /* Pods-TinderAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderAppTests.release.xcconfig"; path = "Target Support Files/Pods-TinderAppTests/Pods-TinderAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +208,7 @@
 		7A1617492517810E002C4BDE /* TinderApp */ = {
 			isa = PBXGroup;
 			children = (
+				7A52DB0B251A4CB200D45169 /* Database */,
 				7A1617A925179BC6002C4BDE /* Networking */,
 				7A16179025178480002C4BDE /* Libraries */,
 				7A16178B25178442002C4BDE /* Extension */,
@@ -227,6 +246,7 @@
 		7A16176D251782E4002C4BDE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7AD274B22519045F00AC8224 /* FavoriteList */,
 				7A1617C92517AA80002C4BDE /* TinderList */,
 				7A16177325178339002C4BDE /* Base */,
 			);
@@ -245,6 +265,7 @@
 		7A16176F251782F8002C4BDE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7AD274AF2519041A00AC8224 /* FavoriteList */,
 				7A16179825178511002C4BDE /* TinderList */,
 				7A1617702517830D002C4BDE /* Base */,
 			);
@@ -270,7 +291,8 @@
 		7A16177625178357002C4BDE /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				7A1617A4251786BE002C4BDE /* MenuCollectionViewCell */,
+				7AD274B8251905A400AC8224 /* FavoriteList */,
+				7AD274B72519059B00AC8224 /* TinderList */,
 				7A16177825178371002C4BDE /* Base */,
 			);
 			path = ViewCell;
@@ -293,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16177C251783A5002C4BDE /* BaseCollectionViewCell.swift */,
+				7AD274B52519058E00AC8224 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -308,6 +331,7 @@
 		7A16177E251783D0002C4BDE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7A52DB0625190C5400D45169 /* Router */,
 				7A1617BB2517A0BE002C4BDE /* EnumDefine */,
 				7A16177F251783D6002C4BDE /* Define */,
 				7A1617CF25188BDF002C4BDE /* Config.swift */,
@@ -336,6 +360,8 @@
 				7A1617A7251787E5002C4BDE /* UIColor_Extension.swift */,
 				7A1617D125188BFA002C4BDE /* String_Extension.swift */,
 				7AD274A92518EE7D00AC8224 /* Date_Extension.swift */,
+				7A52DB0925190E5C00D45169 /* UIApplication_Extension.swift */,
+				7A52DB0E251BAA7400D45169 /* Realm_Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -395,7 +421,7 @@
 		7A1617A4251786BE002C4BDE /* MenuCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				7A1617A5251786D0002C4BDE /* MenuCollectionViewCell.swift */,
+				7AD274B9251906DA00AC8224 /* MenuCollectionViewCell.swift */,
 			);
 			path = MenuCollectionViewCell;
 			sourceTree = "<group>";
@@ -470,6 +496,7 @@
 				7A1617BC2517A0D4002C4BDE /* ErrorType.swift */,
 				7A1617BE2517A0EC002C4BDE /* ApiResponseData.swift */,
 				7AD274AD2518F31400AC8224 /* MenuBarItemType.swift */,
+				7A52DB10251BAC6300D45169 /* LoadingDataType.swift */,
 			);
 			path = EnumDefine;
 			sourceTree = "<group>";
@@ -542,6 +569,54 @@
 				7A1617E62518E6F5002C4BDE /* BirthdayTransform.swift */,
 			);
 			path = Transform;
+			sourceTree = "<group>";
+		};
+		7A52DB0625190C5400D45169 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7A52DB0725190C6300D45169 /* AppRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7A52DB0B251A4CB200D45169 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				7A52DB0C251A4CC600D45169 /* LocalFavoriteListManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		7AD274AF2519041A00AC8224 /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				7AD274B02519043000AC8224 /* FavoriteListViewController.swift */,
+			);
+			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		7AD274B22519045F00AC8224 /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				7AD274B32519047300AC8224 /* FavoriteListViewModel.swift */,
+			);
+			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		7AD274B72519059B00AC8224 /* TinderList */ = {
+			isa = PBXGroup;
+			children = (
+				7A1617A4251786BE002C4BDE /* MenuCollectionViewCell */,
+			);
+			path = TinderList;
+			sourceTree = "<group>";
+		};
+		7AD274B8251905A400AC8224 /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				7AD274BB2519071C00AC8224 /* UserInfoTableViewCell.swift */,
+			);
+			path = FavoriteList;
 			sourceTree = "<group>";
 		};
 		D5BF372A802118993301BDEA /* Pods */ = {
@@ -726,27 +801,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A1617C82517A75A002C4BDE /* UserListModel.swift in Sources */,
+				7A52DB0D251A4CC600D45169 /* LocalFavoriteListManager.swift in Sources */,
 				7AD274AA2518EE7D00AC8224 /* Date_Extension.swift in Sources */,
 				7A161782251783E7002C4BDE /* IconName.swift in Sources */,
+				7A52DB11251BAC6300D45169 /* LoadingDataType.swift in Sources */,
 				7A1617B225179FC6002C4BDE /* BaseApiService.swift in Sources */,
 				7A1617972517849F002C4BDE /* UIView+Constraint.m in Sources */,
+				7A52DB0F251BAA7400D45169 /* Realm_Extension.swift in Sources */,
 				7A1617BF2517A0EC002C4BDE /* ApiResponseData.swift in Sources */,
 				7A16177B2517837F002C4BDE /* BaseUIView.swift in Sources */,
 				7A16178D2517844E002C4BDE /* UIView_Extension.swift in Sources */,
 				7A1617DA2518DFDA002C4BDE /* UserModel.swift in Sources */,
 				7A1617E02518E0D1002C4BDE /* LocationModel.swift in Sources */,
 				7A1617C22517A2DF002C4BDE /* TinderListApiService.swift in Sources */,
+				7AD274B62519058E00AC8224 /* BaseTableViewCell.swift in Sources */,
 				7A1617BA2517A048002C4BDE /* ErrorModel.swift in Sources */,
 				7A161784251783F8002C4BDE /* ColorName.swift in Sources */,
 				7A16174F2517810E002C4BDE /* ViewController.swift in Sources */,
 				7A16177525178343002C4BDE /* BaseViewModel.swift in Sources */,
 				7A1617882517841B002C4BDE /* FontName.swift in Sources */,
-				7A1617A6251786D0002C4BDE /* MenuCollectionViewCell.swift in Sources */,
+				7AD274BC2519071C00AC8224 /* UserInfoTableViewCell.swift in Sources */,
 				7A1617B72517A023002C4BDE /* NetworkRequest.swift in Sources */,
 				7A1617DC2518DFEF002C4BDE /* NameModel.swift in Sources */,
 				7A1617AD25179BED002C4BDE /* BaseModel.swift in Sources */,
 				7A16178A2517842A002C4BDE /* ScreenSize.swift in Sources */,
 				7A1617D825189853002C4BDE /* LoadingView.swift in Sources */,
+				7AD274BA251906DA00AC8224 /* MenuCollectionViewCell.swift in Sources */,
 				7A1617BD2517A0D4002C4BDE /* ErrorType.swift in Sources */,
 				7A1617D225188BFA002C4BDE /* String_Extension.swift in Sources */,
 				7A16174B2517810E002C4BDE /* AppDelegate.swift in Sources */,
@@ -755,10 +835,13 @@
 				7A1617E22518E0E3002C4BDE /* StreetModel.swift in Sources */,
 				7A1617862517840C002C4BDE /* DefineString.swift in Sources */,
 				7A1617A32517869C002C4BDE /* MenuView.swift in Sources */,
+				7A52DB0825190C6300D45169 /* AppRouter.swift in Sources */,
+				7AD274B42519047300AC8224 /* FavoriteListViewModel.swift in Sources */,
 				7A1617E72518E6F5002C4BDE /* BirthdayTransform.swift in Sources */,
 				7A1617DE2518E068002C4BDE /* BirthdayModel.swift in Sources */,
 				7A1617722517831E002C4BDE /* BaseViewController.swift in Sources */,
 				7A1617D525188E9C002C4BDE /* ErrorView.swift in Sources */,
+				7A52DB0A25190E5C00D45169 /* UIApplication_Extension.swift in Sources */,
 				7A1617C52517A437002C4BDE /* TinderListUriType.swift in Sources */,
 				7A16177D251783A5002C4BDE /* BaseCollectionViewCell.swift in Sources */,
 				7A1617D025188BDF002C4BDE /* Config.swift in Sources */,
@@ -766,6 +849,7 @@
 				7A16179D25178659002C4BDE /* CardView.swift in Sources */,
 				7A16179A25178541002C4BDE /* TinderListViewController.swift in Sources */,
 				7A1617E42518E0FB002C4BDE /* AvatarModel.swift in Sources */,
+				7AD274B12519043000AC8224 /* FavoriteListViewController.swift in Sources */,
 				7A1617CB2517AA8D002C4BDE /* TinderListViewModel.swift in Sources */,
 				7A1617A8251787E5002C4BDE /* UIColor_Extension.swift in Sources */,
 				7AD274AC2518EEEB00AC8224 /* DefineName.swift in Sources */,
