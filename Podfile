@@ -7,7 +7,7 @@ target 'TinderApp' do
 
   # Pods for TinderApp
   pod 'Alamofire', '4.9.0'
-  pod 'AlamofireObjectMapper', '5.2.1'
+  pod 'ObjectMapper', '4.2.0'
   pod 'SDWebImage', '5.7.0'
   pod 'RealmSwift', '3.17.3'
   
