@@ -48,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "addUserToFavoriteList(index:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,72 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "addUserToFavoriteList(index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF032B19-FFE1-425D-A8CF-48E449C4E3D5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TinderApp/Database/LocalFavoriteListManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "add(user:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A1634661-A470-4AC9-B08A-7914D91DEAC3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TinderApp/Database/LocalFavoriteListManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "add(user:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A1634661-A470-4AC9-B08A-7914D91DEAC3 - 9c088b337caf1f18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TinderApp.LocalFavoriteListManager.add(user: TinderApp.UserModel) throws -&gt; ()"
-                  moduleName = "TinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hosiluan/PersonalProject/TinderApp/TinderApp/Database/LocalFavoriteListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "634">
-               </Location>
-               <Location
-                  uuid = "A1634661-A470-4AC9-B08A-7914D91DEAC3 - 9c088b337caf1f18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TinderApp.LocalFavoriteListManager.add(user: TinderApp.UserModel) throws -&gt; ()"
-                  moduleName = "TinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hosiluan/PersonalProject/TinderApp/TinderApp/Database/LocalFavoriteListManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "685">
-               </Location>
-            </Locations>
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
