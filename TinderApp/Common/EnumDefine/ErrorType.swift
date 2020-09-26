@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ErrorType {
+public enum ErrorType {
     case defaultError
     case noInternetError
     case customeError(error: ErrorModel)

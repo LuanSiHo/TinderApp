@@ -2,7 +2,7 @@
 //  TinderAppTests.swift
 //  TinderAppTests
 //
-//  Created by Ho Si Luan on 9/20/20.
+//  Created by Ho Si Luan on 9/24/20.
 //  Copyright © 2020 Ho Si Luan. All rights reserved.
 //
 
@@ -26,9 +26,41 @@ class TinderAppTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
+}
+
+extension TinderAppTests {
 
 }
+
+extension TinderAppTests {
+
+}
+
+extension TinderAppTests {
+    class TestClass: BaseProtocol {}
+    
+    func testGetTinderList() {
+       let testClass = TestClass()
+        let param = UserListParam()
+        param.numberOfResult = 10
+        let promise = expectation(description: "return success")
+        
+        let apiService = TinderListApiService(delegate: testClass)
+        apiService.loadUserList(param: param) { (response) in
+            switch response {
+            case .success(_):
+                promise.fulfill()
+                break
+            case .failure(let error):
+                XCTFail("Error: \(error.message)")
+                break
+            }
+        }
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+}
+

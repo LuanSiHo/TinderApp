@@ -25,12 +25,6 @@ extension AppRouter {
             rootViewController.navigationController?.pushViewController(viewController, animated: true)
         }
     }
-    
-    private func presentFromRoot(to viewController: UIViewController) {
-        if let rootViewController = UIApplication.topViewController() {
-            rootViewController.present(viewController, animated: true, completion: nil)
-        }
-    }
 }
 
 

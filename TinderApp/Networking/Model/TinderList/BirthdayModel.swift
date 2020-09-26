@@ -11,10 +11,8 @@ import ObjectMapper
 
 class BirthdayModel: BaseModel {
     @objc dynamic var date: String = ""
-    @objc dynamic var age: Int = 0
     
     override func mapping(map: Map) {
         date        <- (map["date"], BirthdayTransform())
-        age         <- map["age"]
     }
 }

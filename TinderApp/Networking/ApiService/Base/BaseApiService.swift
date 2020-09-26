@@ -15,7 +15,5 @@ class BaseApiService<Delegate> where Delegate: BaseProtocol {
     
     init(delegate: Delegate) {
         self.delegate = delegate
-    }
-    
-    func loadData(completionHandler: @escaping (ApiResponseData<[String: Any]>) -> Void) {}
+    }    
 }

@@ -8,13 +8,13 @@
 
 import Foundation
 
-class ErrorView {
+public class ErrorView {
     
-    static let shared = ErrorView()
+    public static let shared = ErrorView()
     private init() {}
     private var alert: UIAlertController?
     
-    func showError(type: ErrorType) {
+    public func showError(type: ErrorType) {
         let error = getErrorMessageFrom(type: type)
         alert = UIAlertController(title: error.0, message: error.1, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in

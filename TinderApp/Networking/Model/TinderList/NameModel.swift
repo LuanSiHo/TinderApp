@@ -10,7 +10,6 @@ import Foundation
 import ObjectMapper
 
 class NameModel: BaseModel {
-    @objc dynamic var title: String = ""
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""
     
@@ -19,7 +18,6 @@ class NameModel: BaseModel {
     }()
     
     override func mapping(map: Map) {
-        title       <- map["title"]
         firstName   <- map["first"]
         lastName    <- map["last"]
     }
