@@ -3,8 +3,8 @@
 
 This is an app that clone some main features of tinder 
 ## Screenshots
-<img src="screenshot/tinder_list.png" width="300" height="500">                                
-<img src="screenshot/favorite_list.png" width="300" height="500">                                
+<img src="ScreenShots/tinder_list.png" width="300" height="500">                                
+<img src="ScreenShots/favorite_list.png" width="300" height="500">                                
 
 ## Features
 1. Swipe left and right random people
