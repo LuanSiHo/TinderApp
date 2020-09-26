@@ -242,11 +242,10 @@
 				7A16178B25178442002C4BDE /* Extension */,
 				7A16177E251783D0002C4BDE /* Common */,
 				7A16176C251782DE002C4BDE /* MVVM */,
+				7AFE0171251EF77A00D476A8 /* Resources */,
 				7A16174A2517810E002C4BDE /* AppDelegate.swift */,
 				7A1617502517810E002C4BDE /* Main.storyboard */,
-				7A16175325178111002C4BDE /* Assets.xcassets */,
 				7A16175525178111002C4BDE /* LaunchScreen.storyboard */,
-				7A16175825178111002C4BDE /* Info.plist */,
 			);
 			path = TinderApp;
 			sourceTree = "<group>";
@@ -658,6 +657,15 @@
 				7AD274BB2519071C00AC8224 /* UserInfoTableViewCell.swift */,
 			);
 			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		7AFE0171251EF77A00D476A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A16175325178111002C4BDE /* Assets.xcassets */,
+				7A16175825178111002C4BDE /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D5BF372A802118993301BDEA /* Pods */ = {
