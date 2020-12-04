@@ -25,36 +25,27 @@ class FavoriteListViewModel: BaseViewModel {
 
 // MARK: - Database
 extension FavoriteListViewModel {
-    func getLocalFavoriteList(type: LoadDataType) {
+    func getLocalFavoriteList(type: LoadDataType, by manager: LocalManager) {
         if type == .fetch {
             delegate?.showLoadingView()
         }
         
-        let localFavoriteList = LocalFavoriteListManager.shared.getAll()
-        if  localFavoriteList.isEmpty {
+        let localFavoriteList = manager.getAll()
+        if localFavoriteList.isEmpty {
             // empty list
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.favoriteList = []
-                strongSelf.delegate?.showNoDataView()
-            }
+            favoriteList = []
+            delegate?.showNoDataView()
         } else {
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.favoriteList = localFavoriteList
-                strongSelf.delegate?.hideNoDataView()
-            }
+            favoriteList = localFavoriteList as? [UserModel] ?? []
+            delegate?.hideNoDataView()
         }
         
         // stop loading, reload data
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else { return }
-            if type == .reload {
-                strongSelf.delegate?.hideRefreshControl()
-            } else if type == .fetch {
-                strongSelf.delegate?.hideLoadingView()
-            }
-            strongSelf.delegate?.reloadData()
+        if type == .reload {
+            delegate?.hideRefreshControl()
+        } else if type == .fetch {
+            delegate?.hideLoadingView()
         }
+        delegate?.reloadData()
     }
 }

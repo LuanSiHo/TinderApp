@@ -95,7 +95,7 @@ extension FavoriteListViewController {
 // MARK: - Database
 extension FavoriteListViewController {
     func getFavoriteList(type: LoadDataType) {
-        viewModel.getLocalFavoriteList(type: type)
+        viewModel.getLocalFavoriteList(type: type, by: LocalFavoriteListManager.shared)
     }
 }
 

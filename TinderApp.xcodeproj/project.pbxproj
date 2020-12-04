@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4347A65DC6FD326CB02A4567 /* Pods_TinderAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB6FCA0B5CD1100DD9959D8 /* Pods_TinderAppTests.framework */; };
+		5BC41B49257A2685003A04AE /* FavoriteListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC41B48257A2685003A04AE /* FavoriteListViewModelTest.swift */; };
 		7A16174B2517810E002C4BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16174A2517810E002C4BDE /* AppDelegate.swift */; };
 		7A1617522517810E002C4BDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1617502517810E002C4BDE /* Main.storyboard */; };
 		7A16175425178111002C4BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A16175325178111002C4BDE /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		0C17E887E0C8681364600037 /* Pods_TinderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24172918F6453613C30CFB2D /* Pods-TinderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderApp.debug.xcconfig"; path = "Target Support Files/Pods-TinderApp/Pods-TinderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4E8948923A89F8A60D55D848 /* Pods-TinderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TinderAppTests/Pods-TinderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BC41B48257A2685003A04AE /* FavoriteListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModelTest.swift; sourceTree = "<group>"; };
 		7A1617472517810E002C4BDE /* TinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A16174A2517810E002C4BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A1617512517810E002C4BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 				7AFE016B251D149E00D476A8 /* TestUImageExtension.swift */,
 				7AFE016D251D14CC00D476A8 /* TestFontExtension.swift */,
 				7AFE016F251D14FC00D476A8 /* TestTinderListApiService.swift */,
+				5BC41B48257A2685003A04AE /* FavoriteListViewModelTest.swift */,
 			);
 			path = TinderAppTests;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 			files = (
 				7AFE0170251D14FC00D476A8 /* TestTinderListApiService.swift in Sources */,
 				7AFE0168251D13EB00D476A8 /* TestStringExtension.swift in Sources */,
+				5BC41B49257A2685003A04AE /* FavoriteListViewModelTest.swift in Sources */,
 				7AFE016C251D149E00D476A8 /* TestUImageExtension.swift in Sources */,
 				7AFE016E251D14CC00D476A8 /* TestFontExtension.swift in Sources */,
 				7AFE016A251D144F00D476A8 /* TestColorExtension.swift in Sources */,

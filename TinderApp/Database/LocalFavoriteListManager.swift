@@ -9,7 +9,12 @@
 import Foundation
 import RealmSwift
 
-class LocalFavoriteListManager {
+protocol LocalManager {
+    func getAll() -> [Any]
+    func removeAll() throws
+}
+
+class LocalFavoriteListManager: LocalManager {
     static let shared = LocalFavoriteListManager()
     private init() {}
     
@@ -25,8 +30,18 @@ class LocalFavoriteListManager {
         }
     }
     
-    func getAll() -> [UserModel] {
+    func getAll() -> [Any] {
         return realm?.objects(UserModel.self).toArray() ?? []
+    }
+    
+    func removeAll() throws {
+        do {
+            try realm?.write {
+                realm?.deleteAll()
+            }
+        } catch let error {
+            throw error
+        }
     }
 }
 
